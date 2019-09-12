@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Registrar Productos</title>
+         <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- ESTILOS FORMULARIOS -->
+        <link href="../../resources/css/formularios/estilosForms.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="container-fluid"> 
+
+            <div class="row datos">
+
+                <div class="datos col-xs-6 col-md-10">
+                    <!-- CARD -->
+                    <div class="card">
+                        <h1 class="text-success">REGISTRAR PRODUCTOS</h1>
+
+                        <!-- FORMULARIO -->
+
+                        <h:form class="box" a:method="post" onsubmit="return registrarProductos();">
+
+                            <div class="form-group col-md-12">
+                                <label>Categoria Producto</label>
+                                <select class="form-control" id="categoria">
+                                    <option>Pedales</option>
+                                    <option>Marcos</option>
+                                    <option>Manubrios</option>
+                                    <option>Platos</option>
+                                    <option>Manzanas</option>
+                                    <option>Rines</option>
+                                    <option>Llantas</option>
+                                    <option>Cascos</option>
+                                    <option>Ciclas</option>
+                                    <option>Zapatillas</option>
+                                    <option>Licras</option>
+                                    <option>Gafas</option>
+                                    <option>Guantes</option>
+                                    <option>Sillines</option>
+                                    <option>Sillines</option>
+                                    <option>Codos de direccion</option>
+                                    <option>Pachas</option>
+                                    <option>Neumaticos</option>
+                                    <option>Puntillas traseras-delanteras</option>
+                                    <option>Aros GW doble pared</option>
+                                    <option>Bombas beto</option>
+                                    <option>Carracas</option>
+                                    <option>Herraduras</option>
+                                    <option>Ciclo computadores</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <h:outputLabel for="nombreProd" value="Nombre Producto:"></h:outputLabel>
+                                <h:inputText id="nombreProd" class="form-control" a:type="text" a:minlength="5" a:pattern="[A-Za-z0-9]+" a:placeholder="Ingrese el nombre del producto que desea registrar"  title="MINIMO 5 CARACTERES Y MAXIMO 20">
+                                </h:inputText>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <h:outputLabel for="descripcion" value="Descripcion:"></h:outputLabel>
+                                <h:inputText id="descripcion" class="form-control" a:type="text" a:minlength="5" a:pattern="[A-Za-z0-9]+" a:placeholder="Ingrese la descripcion del producto que desea registrar"  title="MINIMO 5 CARACTERES Y MAXIMO 20">
+                                </h:inputText>
+
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <h:outputLabel for="precio" value="Precio:"></h:outputLabel>
+                                <h:inputText id="precio" class="form-control" a:type="text" a:minlength="4" a:placeholder="Ingrese el precio del producto que desea registrar">
+                                </h:inputText>
+                            </div>
+
+                            <div class="boton">
+                                <h:commandButton type="submit" class="form-control" value="Registrar Producto"></h:commandButton>
+                            </div>
+
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="../../../resources/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="../../../resources/js/popper.js" type="text/javascript"></script>
+        <script src="../../../resources/js/bootstrap.min.js" type="text/javascript"></script>
+        
+         <!--ALERTAS -->
+         <script src="../../resources/js/alertas/sweetalert.js" type="text/javascript"></script>
+         
+         <!--VALIDACIONES VENDEDOR -->
+         <script src="../../resources/js/validaciones-vendedor/validar.js" type="text/javascript"></script>
+    </h:body>
+</html>
+

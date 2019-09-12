@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+        <title>Consultar Calificaciones</title>
+        <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- TABLAS -->
+        <link href="../../resources/css/tablas/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../resources/css/tablas/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../resources/css/tablas/estlosTablas.css" rel="stylesheet" type="text/css"/>
+
+        <!-- ICONOS -->
+        <link href="../../../resources/css/all.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+
+        <div class="container">
+
+            <table class="display tabla table-responsive">
+
+                <thead>
+                    <tr>
+                        <th>ID Cliente</th>
+                        <th>ID Calificacion</th>
+                        <th>Valor</th>
+                        <th>Tipo PQRS</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Comentario</th>
+                        <th>Editar</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/09/2017</td>
+                        <td>12:00 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>Sugerencia</td>
+                        <td>1/05/2018</td>
+                        <td>7:00 PM</td>
+                        <td>Sugiero que realicen las entregas en centros comerciales</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>12</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>11</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>19</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>20</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>22</td>
+                        <td>5</td>
+                        <td>Peticion</td>
+                        <td>12/11/2019</td>
+                        <td>10:30 PM</td>
+                        <td>La entrega estuvo muy efectiva y confiable</td>
+                        <td>
+                            <a href="../../img/Error 400.png">
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye-dropper"></i></button>
+                            </a>
+                            <button class="btn btn-danger eliminar" type="button" onclick="eliminar();"><i class="fas fa-trash-alt"></i></button> 
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+         <script src="../../../resources/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="../../../resources/js/popper.js" type="text/javascript"></script>
+        <script src="../../../resources/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <!--ALERTAS E ICONOS -->
+        <script src="../../resources/js/alertas/sweetalert.js" type="text/javascript"></script>
+        <script src="../../../resources/js/all.js" type="text/javascript"></script>
+        <!-- TABLAS -->
+        <script src="../../resources/js/tablas/datatables.min.js" type="text/javascript"></script>
+        <script src="../../resources/js/tablas/dataTables.buttons.min.js" type="text/javascript"></script>
+        <script src="../../resources/js/tablas/jszip.min.js" type="text/javascript"></script>
+        <script src="../../resources/js/tablas/pdfmake.min.js" type="text/javascript"></script>
+        <script src="../../resources/js/tablas/vfs_fonts.js" type="text/javascript"></script>
+        <script src="../../resources/js/tablas/buttons.html5.min.js" type="text/javascript"></script>
+
+        <!-- ESTILOS BOTONES -->
+        <script src="../../resources/js/tablas/botones.js" type="text/javascript"></script>
+        <script src="../../resources/js/tablas/eliminaFilas.js" type="text/javascript"></script>
+
+        <!--VALIDACIONES -->
+        <script src="../../resources/js/validaciones-cliente/validar.js" type="text/javascript"></script>
+    </h:body>
+</html>
+

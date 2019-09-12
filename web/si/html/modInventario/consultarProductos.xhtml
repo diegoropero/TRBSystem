@@ -1,0 +1,650 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+        <title>Consultar Productos</title>
+        <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+          <!--NOTIFICACIONES -->
+          <link href="../../resources/css/notificaciones/toastr.min.css" rel="stylesheet" type="text/css"/>
+          
+            <!--ESTILOS PRODUCTOS -->
+          <link href="../../resources/css/productos/estilosProductos.css" rel="stylesheet" type="text/css"/>
+          
+            <!-- ESTILOS FORMULARIOS -->
+            <link href="../../resources/css/formularios/estilosForms.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="wrap-fluid">
+            <div class="tienda">
+                <div class="categorias">
+                   
+
+                    <a href="#" class="category_item" category="all">Seleccionados</a>
+
+                    <a href="#" class="category_item" category="ciclas">Ciclas</a>
+
+                    <a href="#" class="category_item" category="pedales">Pedales</a>
+
+                    <a href="#" class="category_item" category="marcos">Marcos</a>
+
+                    <a href="#" class="category_item" category="manubrios">Manubrios</a>
+
+                    <a href="#" class="category_item" category="platos">Platos</a>
+
+                    <a href="#" id="productos" class="category_item" category="rines">Rines</a>
+
+                    <a href="#" class="category_item" category="llantas">LLantas</a>
+
+                    <a href="#" class="category_item" category="manzanas">Manzanas</a>
+
+                    <a href="#" class="category_item" category="sillines">Sillines</a>
+                </div>
+
+                <div class="categorias">
+
+                    <a href="#" class="category_item" category="cascos">Cascos</a>
+
+                    <a href="#" class="category_item" category="zapatillas">Zapatillas</a>
+
+                    <a href="#" class="category_item" category="licras">Licras</a>
+
+                    <a href="#" class="category_item" category="gafas">Gafas</a>
+
+                    <a href="#" class="category_item" category="guantes">Guantes</a>
+
+                    <a href="#" class="category_item" category="conos">Conos de direccion</a>
+
+                    <a href="#" class="category_item" category="pachas">Pachas</a>
+
+                    <a href="#" class="category_item" category="neumaticos">Neumaticos</a>
+
+                    <a href="#" class="category_item" category="puntillas">Puntillas</a>
+
+                    <a href="#" class="category_item" category="aros">Aros GW</a>
+                </div>
+
+                <div class="categorias">
+
+                    <a href="#" class="category_item" category="bombas">Bombas beto</a>
+
+                    <a href="#" class="category_item" category="carracas">Carracas</a>
+
+                    <a href="#" class="category_item" category="herraduras">Herraduras</a>
+
+                    <a href="#" class="category_item" category="computadores">Ciclo computadores</a>
+
+                    <button class="btn btn-success" data-toggle="modal" data-target="#compra">Generar compra</button>
+                    <!-- MODAL -->
+                    <div class="modal fade" id="compra" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header modal-header bg-success">
+                                    <h5 class="modal-title">Generar compra</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="box" method="post" onsubmit="return comprar();">
+                                        <div class="form-group col-md-12">
+                                            <h:outputLabel for="categoria" value="Categoria:"></h:outputLabel>
+                                            <select class="form-control" id="categoria">
+                                                <option>Pedales</option>
+                                                <option>Marcos</option>
+                                                <option>Manubrios</option>
+                                                <option>Platos</option>
+                                                <option>Manzanas</option>
+                                                <option>Rines</option>
+                                                <option>Llantas</option>
+                                                <option>Cascos</option>
+                                                <option>Ciclas</option>
+                                                <option>Zapatillas</option>
+                                                <option>Licras</option>
+                                                <option>Gafas</option>
+                                                <option>Guantes</option>
+                                                <option>Sillines</option>
+                                                <option>Sillines</option>
+                                                <option>Codos de direccion</option>
+                                                <option>Pachas</option>
+                                                <option>Neumaticos</option>
+                                                <option>Puntillas traseras-delanteras</option>
+                                                <option>Aros GW doble pared</option>
+                                                <option>Bombas beto</option>
+                                                <option>Carracas</option>
+                                                <option>Herraduras</option>
+                                                <option>Ciclo computadores</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                              <h:outputLabel for="categoria" value="Nombre Producto:"></h:outputLabel>
+                                              <h:inputText id="nombreProd" class="form-control" a:minlength="5"></h:inputText>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <h:outputLabel for="cantProd" value="Cantidad Producto:"></h:outputLabel>
+                                            <h:inputText id="cantProd" class="form-control" a:type="number">
+                                                <f:validateLongRange minimum="1" maximum="23"/>
+                                            </h:inputText>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <h:commandButton type="submit" class="form-control" value="Comprar"></h:commandButton>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <!-- TARJETAS -->
+
+                <section class="productos col-xm-12 col-md-6">
+
+                    <!-- CICLAS -->
+                    <div class="product-item" category="ciclas">
+                        <img src="../../resources/images/ciclas/cicla1.jpg" alt=""/>
+                            <h3><strong>Cicla 1</strong></h3>
+                            <p>Cicla todo terreno color negra con amarillo</p>
+                            <p>$900.000</p>
+                        
+                    </div>
+
+                    <!-- PEDALES -->
+                    <div class="product-item" category="pedales">
+                        <img src="../../resources/images/pedales/pedal1.jpg" alt=""/>
+                            <h3><strong>Pedales pacific</strong></h3>
+                            <p>Para todo terreno/fixie</p>
+                            <p>$17.000 Par</p>
+                    </div>
+
+                    <!-- MARCOS -->
+                    <div class="product-item" category="marcos">
+                        <img src="../../resources/images/marcos/marco1.jpg" alt=""/>
+                            <h3><strong>Marco y tenedor en aluminio crudo</strong></h3>
+                            <p>Incluye tarjeta de propiedad y garantía directa con la marca.</p>
+                    </div>
+
+                    <div class="product-item" category="marcos">
+                        <img src="../../resources/images/marcos/marco2.jpg" alt=""/>
+                            <h3><strong>Marco negro</strong></h3>
+                            <p>Incluye tarjeta de propiedad y garantía directa con la marca.</p>
+                            <p>$150.000</p>
+                    </div>
+
+                    <div class="product-item" category="marcos">
+                        <img src="../../resources/images/marcos/marco3.jpg" alt=""/>
+                            <h3><strong>Marco gris</strong></h3>
+                            <p>Incluye tarjeta de propiedad y garantía directa con la marca.</p>
+                    </div>
+
+                    <!-- MANUBRIOS -->
+                    <div class="product-item" category="manubrios">
+                        <img src="../../resources/images/manubrios/manubrio1.jpg" alt=""/>
+                            <h3><strong>Manubrio BullHorn marca Winner</strong></h3>
+                            <p>para bicicletas Fixed</p>
+                            <p>$15.000</p>
+                    </div>
+
+                    <!-- PLATOS -->
+                    <div class="product-item" category="platos">
+                        <img src="../../resources/images/platos/plato1.jpg" alt=""/>
+                            <h3><strong>Biplato con biela tipo araña </strong></h3>
+                            <p>Relación 53/39</p>
+                            <p>$57.000</p>
+                    </div>
+
+                    <div class="product-item" category="platos">
+                        <img src="../../resources/images/platos/plato2.jpg" alt=""/>
+                            <h3><strong>Biplato gris con biela tipo araña </strong></h3>
+                            <p>Relación 53/39</p>
+                    </div>
+
+                    <div class="product-item" category="platos">
+                        <img src="../../resources/images/platos/plato3.png" alt=""/>
+                            <h3><strong>Biplato gris</strong></h3>
+                            <p>Relación 53/39</p>
+                            <p>$57.000</p>
+                    </div>
+
+                    <div class="product-item" category="platos">
+                        <img src="../../resources/images/platos/plato4.png" alt=""/>
+                            <h3><strong>Biplato negro con biela tipo araña </strong></h3>
+                            <p>Relación 53/39</p>
+                            <p>$125.000</p>
+                    </div>
+
+                    <div class="product-item" category="platos">
+                        <img src="../../resources/images/platos/plato5.png" alt=""/>
+                            <h3><strong>Biplato negro con biela tipo araña </strong></h3>
+                            <p>Relación 53/39</p>
+                            <p>$230.000</p>
+                    </div>
+
+                    <!-- LLANTAS -->
+                    <div class="product-item" category="llantas">
+                        <img src="../../resources/images/llantas/llanta1.jpg" alt=""/>
+                            <h3><strong>LLanta delantera</strong></h3>
+                            <p>Para cicla urbana</p>
+                    </div>
+
+
+                    <!-- MANZANAS -->
+                    <div class="product-item" category="manzanas">
+                        <img src="../../resources/images/manzanas/manzana1.jpg" alt=""/>
+                            <h3><strong>Manzana color blanco</strong></h3>
+                            <p>Doble pieza</p>
+                    </div>
+
+                    <div class="product-item" category="manzanas">
+                        <img src="../../resources/images/manzanas/manzana2.jpg" alt=""/>
+                            <h3><strong>Manzanas piñon fijo</strong></h3>
+                            <p>libre Schwalbe aluminio</p>
+                            <p>$40.000</p>
+                    </div>
+
+
+                    <!-- SILLINES -->
+                    <div class="product-item" category="sillines">
+                        <img src="../../resources/images/sillines/sillin1.jpg" alt=""/>
+                            <h3><strong>Sillin negro play</strong></h3>
+                            <p>Para cicla urbana</p>
+                    </div>
+
+                    <div class="product-item" category="sillines">
+                        <img src="../../resources/images/sillines/sillin2.jpg" alt=""/>
+                            <h3><strong>Sillin negro con rojo play</strong></h3>
+                            <p>Para cicla urbana</p>
+                    </div>
+
+                    <div class="product-item" category="sillines">
+                        <img src="../../resources/images/sillines/sillin3.jpg" alt=""/>
+                            <h3><strong>Sillin negro con blanco play</strong></h3>
+                            <p>Para cicla urbana</p>
+                    </div>
+
+                    <div class="product-item" category="sillines">
+                        <img src="../../resources/images/sillines/sillin4.jpg" alt=""/>
+                            <h3><strong>Sillin negro play</strong></h3>
+                            <p>Para cicla urbana</p>
+                    </div>
+
+                    <div class="product-item" category="sillines">
+                        <img src="../../resources/images/sillines/sillin5.jpg" alt=""/>
+                            <h3><strong>Sillin negro con verde play</strong></h3>
+                            <p>Para cicla urbana</p>
+                    </div>
+
+                    <div class="product-item" category="sillines">
+                        <img src="../../resources/images/sillines/sillin6.jpg" alt=""/>
+                            <h3><strong>Sillin negro con gris play</strong></h3>
+                            <p>Para cicla urbana</p>
+                    </div>
+
+                    <div class="product-item" category="sillines">
+                        <img src="../../resources/images/sillines/sillin7.jpg" alt=""/>
+                            <h3><strong>Sillin antiprostatico Benotto</strong></h3>
+                            <p>la mejor opción para duras jornadas de competencia</p>
+                            <p>$35.000</p>
+                    </div>
+
+
+
+                    <!-- CASCOS -->
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco1.jpg" alt=""/>
+                            <h3><strong>Casco blanco</strong></h3>
+                            <p>Kask protone 2.0</p>
+                            <p>$60.000</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco2.jpg" alt=""/>
+                            <h3><strong>Casco rojo MSC MTB-ECO</strong></h3>
+                            <p>Cierre con micro-ajuste, viseras y almohadillas intercambiables y lavables</p>
+                            <p>$65.000</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco3.jpg" alt=""/>
+                            <h3><strong>Casco blanco MSC MTB-ECO </strong></h3>
+                            <p>Cierre con micro-ajuste, viseras y almohadillas intercambiables y lavables</p>
+                            <p>$65.000</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco4.jpg" alt=""/>
+                            <h3><strong>Casco rojo con negro GW</strong></h3>
+                            <p>Kask protone 2.0</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco5.jpg" alt=""/>
+                            <h3><strong>Casco verde con negro</strong></h3>
+                            <p>Kask protone 2.0</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco6.jpg" alt=""/>
+                            <h3><strong>Casco verde oscuro con negro</strong></h3>
+                            <p>Mantis 2.0</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco7.jpg" alt=""/>
+                            <h3><strong>Casco azul con negro</strong></h3>
+                            <p>Mantis 2.0</p>
+                            <p>$60.000</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco8.jpg" alt=""/>
+                            <h3><strong>Casco verde con blanco</strong></h3>
+                            <p>Mantis 2.0</p>
+                            <p>$60.000</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco9.jpg" alt=""/>
+                            <h3><strong>Cascos</strong></h3>
+                            <p>Kask protone 2.0</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/cascos.jpg" alt=""/>
+                            <h3><strong>Casco azul claro</strong></h3>
+                            <p>Kask protone 2.0</p>
+                            <p>$60.000</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco10.jpg" alt=""/>
+                            <h3><strong>Casco azul oscuro</strong></h3>
+                            <p>Kask protone 2.0</p>
+                            <p>$60.000</p>
+                    </div>
+
+                    <div class="product-item" category="cascos">
+                        <img src="../../resources/images/cascos/casco11.jpg" alt=""/>
+                            <h3><strong>Casco verde claro</strong></h3>
+                            <p>Kask protone 2.0</p>
+                            <p>$60.000</p>
+                    </div>
+
+                    <!-- ZAPATILLAS -->
+                    <div class="product-item" category="zapatillas">
+                        <img src="../../resources/images/zapatos/zapatos1.jpg" alt=""/>
+                            <h3><strong>Zapatos DTO</strong></h3>
+                            <p>Par de zapatos para ejecicio</p>
+                            <p>$150.000</p>
+                    </div>
+
+                    <div class="product-item" category="zapatillas">
+                        <img src="../../resources/images/zapatos/zapatos2.jpg" alt=""/>
+                            <h3><strong>Zapatillas MTB</strong></h3>
+                            <p>Marca DTO cierre de hebilla</p>
+                            <p>$180.000</p>
+                    </div>
+
+                    <!-- LICRAS -->
+                    <div class="product-item" category="licras">
+                        <img src="../../resources/images/licras/licra1.png" alt=""/>
+                            <h3><strong>licra color negro con amarillo</strong></h3>
+                            <p>De buen material y duradero</p>
+                            <p>$130.000</p>
+                    </div>
+
+                    <div class="product-item" category="licras">
+                        <img src="../../resources/images/licras/licra2.png" alt=""/>
+                            <h3><strong>licra color azul con negro</strong></h3>
+                            <p>De buen material y duradero</p>
+                            <p>$130.000</p>
+                    </div>
+
+                    <div class="product-item" category="licras">
+                        <img src="../../resources/images/licras/licra3.png" alt=""/>
+                            <h3><strong>licra color azul con blanco</strong></h3>
+                            <p>De buen material y duradero</p>
+                            <p>$130.000</p>
+                    </div>
+
+                    <div class="product-item" category="licras">
+                        <img src="../../resources/images/licras/licra4.png" alt=""/>
+                            <h3><strong>licra color rojo con blanco</strong></h3>
+                            <p>De buen material y duradero</p>
+                            <p>$130.000</p>
+                    </div>
+
+                    <div class="product-item" category="licras">
+                        <img src="../../resources/images/licras/licra5.png" alt=""/>
+                            <h3><strong>licra color azul oscuro con blanco</strong></h3>
+                            <p>De buen material y duradero Movistar</p>
+                            <p>$130.000</p>
+                    </div>
+
+                    <!-- GAFAS -->
+                    <div class="product-item" category="gafas">
+                        <img src="../../resources/images/gafas/gafas1.png" alt=""/>
+                            <h3><strong>Gafas Zacro</strong></h3>
+                            <p>Diferentes estilos para tu personalidad</p>
+                            <p>$80.000</p>
+                    </div>
+
+                    <div class="product-item" category="gafas">
+                        <img src="../../resources/images/gafas/gafas2.png" alt=""/>
+                            <h3><strong>Gafas Zacro</strong></h3>
+                            <p>Color amarillo y negro</p>
+                            <p>$80.000</p>
+                    </div>
+
+                    <div class="product-item" category="gafas">
+                        <img src="../../resources/images/gafas/gafas3.png" alt=""/>
+                            <h3><strong>Gafas Zacro</strong></h3>
+                            <p>Gafas color negro</p>
+                            <p>$80.000</p>
+                    </div>
+
+                    <!-- GUANTES -->
+                    <div class="product-item" category="guantes">
+                        <img src="../../resources/images/guantes/guantes1.jpg" alt=""/>
+                            <h3><strong>Guantes Bullët Designs de protección</strong></h3>
+                            <p>Siliconado en las palmas para mejor agarre "antideslizante"</p>
+                            <p>$30.000</p>
+                    </div>
+
+                    <div class="product-item" category="guantes">
+                        <img src="../../resources/images/guantes/guantes2.jpg" alt=""/>
+                            <h3><strong>uantes Pro Biker de protección</strong></h3>
+                            <p>Siliconado en las palmas para mejor agarre "antideslizante"</p>
+                            <p>$30.000</p>
+                    </div>
+
+                    <div class="product-item" category="guantes">
+                        <img src="../../resources/images/guantes/guantes3.jpg" alt=""/>
+                            <h3><strong>Guantes Bullët Designs de protección</strong></h3>
+                            <p>Siliconado en las palmas para mejor agarre "antideslizante"</p>
+                            <p>$30.000</p>
+                    </div>
+
+                    <div class="product-item" category="guantes">
+                        <img src="../../resources/images/guantes/guantes4.jpg" alt=""/>
+                            <h3><strong>Guantes TLD troy lee designs</strong></h3>
+                            <p>Palma de cuero clarino levemente acolchada de capa única </p>
+                            <p>$30.000</p>
+                    </div>
+
+                    <div class="product-item" category="guantes">
+                        <img src="../../resources/images/guantes/guantes5.jpg" alt=""/>
+                            <h3><strong>Guantes TLD troy lee designs</strong></h3>
+                            <p>Palma de cuero clarino levemente acolchada de capa única </p>
+                            <p>$30.000</p>
+                    </div>
+
+                    <!--CONOS DE DIRECCION -->
+                    <div class="product-item" category="conos">
+                        <img src="../../resources/images/conos de direccion/cono1.jpg" alt=""/>
+                            <h3><strong>Caña o codo de dirección Schwalbe</strong></h3>
+                            <p>Compatible para manubrio de diametro Oversize 31.8 mm</p>
+                            <p>$25.000 c/u</p>
+                    </div>
+
+                    <div class="product-item" category="conos">
+                        <img src="../../resources/images/conos de direccion/cono2.jpg" alt=""/>
+                            <h3><strong>Caña o codo de dirección Schwalbe</strong></h3>
+                            <p>Compatible para manubrio de diametro Oversize 31.8 mm</p>
+                            <p>$23.000 c/u</p>
+                    </div>
+
+                    <!-- PACHAS -->
+                    <div class="product-item" category="pachas">
+                        <img src="../../resources/images/pachas/pacha1.jpg" alt=""/>
+                            <h3><strong>Pacha Shimano 6 velocidades 14-28D</strong></h3>
+                            <p>Fabricado en acero contra la corrosión</p>
+                            <p>$25.000</p>
+                    </div>
+
+
+                    <!-- NEUMATICOS -->
+                    <div class="product-item" category="neumaticos">
+                        <img src="../../resources/images/neumaticos/neumatico1.jpg" alt=""/>
+                            <h3><strong>Neumatico Kenda 700X18/23C </strong></h3>
+                            <p>Tamaño de valvula: 60 mm, tipo de valvula: Presta</p>
+                            <p>$10.000</p>
+                    </div>
+
+                    <div class="product-item" category="neumaticos">
+                        <img src="../../resources/images/neumaticos/neumatico2.jpg" alt=""/>
+                            <h3><strong>Neumatico Kenda rin 26x1.9/2.125</strong></h3>
+                            <p>Neumatico para bicicleta todo terreno</p>
+                            <p>$8.000</p>
+                    </div>
+
+
+                    <!-- PUNTILLAS -->
+                    <div class="product-item" category="puntillas">
+                        <img src="../../resources/images/puntillas/puntilla1.jpg" alt=""/>
+                            <h3><strong>Puntilla ASSOS delantera y trasera </strong></h3>
+                            <p>para llanta bicicleta de ruta</p>
+                            <p>$4.500</p>
+                    </div>
+
+                    <!-- AROS -->
+                    <div class="product-item" category="aros">
+                        <img src="../../resources/images/aros/aro1.jpg" alt=""/>
+                            <h3><strong>Aro GW triple pared R43 PRO 700C</strong></h3>
+                            <p>Material de aluminio</p>
+                            <p>$35.000</p>
+                    </div>
+
+                    <div class="product-item" category="aros">
+                        <img src="../../resources/images/aros/aro2.jpg" alt=""/>
+                            <h3><strong>Aro GW doble pared AVANTI</strong></h3>
+                            <p>Material de aluminio</p>
+                            <p>$27.000</p>
+                    </div>
+
+                    <div class="product-item" category="aros">
+                        <img src="../../resources/images/aros/aro3.jpg" alt=""/>
+                            <h3><strong>Aro GW doble pared R30 PRO 700C</strong></h3>
+                            <p>Material de aluminio</p>
+                            <p>$28.000</p>
+                    </div>
+
+                    <!-- BOMBAS -->
+                    <div class="product-item" category="bombas">
+                        <img src="../../resources/images/bombas/bomba1.jpg" alt=""/>
+                            <h3><strong>Mini bomba beto</strong></h3>
+                            <p>Todo tipo de llantas de bicicleta, MTB, ruta, todoterreno, balones</p>
+                            <p>$15.000</p>
+                    </div>
+
+                    <div class="product-item" category="bombas">
+                        <img src="../../resources/images/bombas/bomba2.jpg" alt=""/>
+                            <h3><strong>Bomba beto con manometro </strong></h3>
+                            <p>Cabezal doble para válvulas Schrader/Presta</p>
+                            <p>$20.000 c/u</p>
+                    </div>
+
+                    <div class="product-item" category="bombas">
+                        <img src="../../resources/images/bombas/bomba3.jpg" alt=""/>
+                            <h3><strong>Bomba beto en aluminio con manometro</strong></h3>
+                            <p>Cabezal doble para válvulas Schrader/Presta</p>
+                            <p>$25.000 c/u</p>
+                    </div>
+
+                    <div class="product-item" category="bombas">
+                        <img src="../../resources/images/bombas/bomba4.jpg" alt=""/>
+                            <h3><strong>Bomba beto en aluminio con manometro</strong></h3>
+                            <p>Cabezal doble para válvulas Schrader/Presta</p>
+                            <p>$25.000 c/u</p>
+                    </div>
+
+                    <div class="product-item" category="bombas">
+                        <img src="../../resources/images/bombas/bomba5.jpg" alt=""/>
+                            <h3><strong>Bomba beto en aluminio con manometro</strong></h3>
+                            <p>Cabezal doble para válvulas Schrader/Presta</p>
+                            <p>$25.000 c/u</p>
+                    </div>
+
+                    <!-- CARRACAS -->
+                    <div class="product-item" category="carracas">
+                        <img src="../../resources/images/carracas/carraca1.jpg" alt=""/>
+                            <h3><strong>Carraca Tektro aluminio negra</strong></h3>
+                            <p>Muy funcionales</p>
+                            <p>$24.000</p>
+                    </div>
+
+                    <div class="product-item" category="carracas">
+                        <img src="../../resources/images/carracas/carraca2.jpg" alt=""/>
+                            <h3><strong>Carracas Tektro aluminio negras</strong></h3>
+                            <p>Muy funcionales</p>
+                            <p>$48.000 par</p>
+                    </div>
+
+                    <!-- HERRADURAS -->
+                    <div class="product-item" category="herraduras">
+                        <img src="../../resources/images/herraduras/herradura1.jpg" alt=""/>
+                            <h3><strong>Herraduras GW cosmos</strong></h3>
+                            <p>Para bicicleta de ruta/fixie en aluminio </p>
+                            <p>$36.000 par</p>
+                    </div>
+
+                    <!-- CICLO COMPUTADORES -->
+                    <div class="product-item" category="computadores">
+                        <img src="../../resources/images/ciclo-computadores/ciclo1.jpg" alt=""/>
+                            <h3><strong>Ciclo computador GANEAU EOS11</strong></h3>
+                            <p>Los ciclocomputadores GARNEAU ofrecen al ciclista una amplia gama de opciones tecnológicas para medir y controlar tú desempeño.</p>
+                            <p>$37.000</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <script src="../../../resources/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="../../../resources/js/popper.js" type="text/javascript"></script>
+        <script src="../../../resources/js/bootstrap.min.js" type="text/javascript"></script>
+        
+         <!--PRODUCTOS -->
+         <script src="../../resources/js/productos/productos.js" type="text/javascript"></script>
+         
+         <!-- NOTIFICACIONES -->
+         <script src="../../resources/js/notificaciones/toastr.min.js" type="text/javascript"></script>
+         <script src="../../resources/js/notificaciones/notificaciones.js" type="text/javascript"></script>
+         
+         <!--ALERTAS -->
+         <script src="../../resources/js/alertas/sweetalert.js" type="text/javascript"></script>
+         
+         <!--VALIDACIONES CLIENTE -->
+         <script src="../../resources/js/validaciones-cliente/validar.js" type="text/javascript"></script>
+    </h:body>
+</html>
+

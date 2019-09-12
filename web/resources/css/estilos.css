@@ -1,0 +1,114 @@
+/* Required for full background image */
+#htmlE,
+#bodyE,
+#headerE,
+#intro-section {
+    height: 100%;
+}
+.col-md-12 iframe {
+    width: 50%;
+    height: 300px;
+    margin-top: 80px; 
+}
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+@media (max-width: 740px) {
+    #htmlE,
+    #bodyE,
+    #headerE,
+    #intro-section {
+        height: 100vh;
+    }
+}
+@media (max-width: 991px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #563e91 !important;
+    }
+}
+.top-nav-collapse, .page-footer {
+    background-color: #0B4B71 !important;
+}
+
+.log img{
+    width: 100px;
+    height: 50px;
+}
+.lead h1{
+    font-size: 10px;
+}
+.col-lg-12 img{
+    width: 350px;
+    height: 350px;
+    padding:30px;
+    float: left;
+}
+.view img{
+    width: 350px;
+    height: 350px;
+}
+.col-md-12 img{
+    width: 100px;
+    height: 200px;
+    float: left;
+    margin-right: 190px;
+}
+.avatar img{
+    width: 350px;
+    height: 200px;
+}
+.btn{
+    background: #0B4B71;
+    color: #fff;
+}
+
+iframe{
+    width: 100%;
+    height: 450px;
+}
+
+.rgba-gradient {
+    background: rgba(35, 7, 77, 0.6);
+    background: #9DCDC3 -webkit-linear-gradient(to right, #9DCDC3, rgba(35, 7, 77, 0.6));
+    background: #9DCDC3 linear-gradient(to right, #9DCDC3, rgba(35, 7, 77, 0.6));
+}
+.img-gradient:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220, 66, 37, 0.5)), color-stop(100%, rgba(0, 47, 75, 0.5)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+    /* Opera 11.10+ */
+    /* IE10+ */
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 47, 75, 0.5)), to(rgba(220, 66, 37, 0.5)));
+    background: linear-gradient(to bottom, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000', GradientType=0);
+    /* IE6-9 */
+}
+
+/*FORMULARIOS*/
+.box input, .box select, .box textarea, .box button{
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type ="text"]:focus, .box input[type = "number"]:focus, .box input[type = "tel"]:focus, .box select:focus, .box textarea:focus, .box input[type = "password"]:focus{
+    width: 350px;
+}
+
+input:valid{
+    border: 1px solid green;
+}
+input:invalid{
+    border: 1px solid red;
+}
+

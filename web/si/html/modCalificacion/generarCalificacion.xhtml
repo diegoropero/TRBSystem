@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+        <title>Generar Calificacion</title>
+        <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- ESTRELLAS -->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="../../resources/css/calificacion/starrr.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- ESTILOS FORMULARIOS -->
+        <link href="../../resources/css/formularios/estilosForms.css" rel="stylesheet" type="text/css"/>
+        
+    </h:head>
+    <h:body>
+        <div class="container-fluid"> 
+
+            <div class="row datos">
+
+                <div class="datos col-xs-6 col-md-10">
+                    <!-- CARD -->
+                    <div class="card">
+                        <h1 class="text-primary">GENERAR CALIFICACION</h1>
+
+                        <!-- FORMULARIO -->
+                        <h:form class="box">
+                            <div class="calificar form-group col-sm-12">
+                                <p>
+                                    <h1 class="text-center">Calificar: <span id="Estrellas"></span></h1>
+                                </p>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Tipo PQRS</label>
+                                <select class="form-control">
+                                    <option>Peticion</option>
+                                    <option>Queja</option>
+                                    <option>Reclamo</option>
+                                    <option>Sugerencia</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label>Comentario</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+
+                            <div class="boton-calififcacion">
+                                <h:commandButton type="submit" value="Eviar"></h:commandButton>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../../resources/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="../../../resources/js/popper.js" type="text/javascript"></script>
+        <script src="../../../resources/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- CALIFICACION -->
+        <script src="../../resources/js/calificacion/starrr.js" type="text/javascript"></script>
+        <script src="../../resources/js/calificacion/calificar.js" type="text/javascript"></script>
+    </h:body>
+</html>
+

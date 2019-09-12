@@ -1,0 +1,1012 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <title>TAKE ROAD BIKES</title>
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/all.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/all.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet"/>
+    </h:head>
+
+    <h:body>
+        <header >
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                <div class="container">
+                    <div class="log">    
+                        <img src="resources/images/logo.png" alt=""/>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mr-auto smooth-scroll">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#intro"><i class="fas fa-home"></i>Home
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about" data-offset="90"><i class="fas fa-chart-line"></i>Destacados</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projects" data-offset="90"><i class="fas fa-image"></i>Galeria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#gallery" data-offset="90"><i class="fas fa-bolt"></i>Quienes Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#testimonials" data-offset="30"><i class="fas fa-info-circle"></i>Conocenos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#articles" data-offset="90"><i class="fas fa-bicycle"></i>Productos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact" data-offset="90"><i class="fas fa-mobile-alt"></i>Contactenos</a>
+                            </li>
+                        </ul>
+                        <!-- Buscador -->
+                        <form class="form-inline">
+                            <div class="md-form my-0">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search"></input>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Nav -->
+            </nav>
+            <!-- Full Page Intro -->
+            <div id="intro-section" class="view">
+                <video class="video-intro" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline="">
+                    <source src="https://mdbootstrap.com/img/video/animation.mp4" type="video/mp4"> </source>
+                </video>
+                <!-- Mask & flexbox options-->
+                <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+                    <!-- Content -->
+                    <div class="container px-md-3 px-sm-0">
+                        <!--Inicio row-->
+                        <div class="row wow fadeIn justify-content-center">
+                            <!--Inicio colum-->
+                            <div class="col-md-12 mb-4 white-text text-center wow fadeIn">
+                                <iframe src="https://www.youtube.com/embed/_KEvi7YLUe8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                <h3 class="display-3 font-weight-bold white-text mb-0 pt-md-5 pt-5">TAKE ROAD BIKES</h3>
+                                <hr class="hr-light my-4 w-75"></hr>
+                            </div>
+                            <!-- Button trigger modal -->
+
+                            <div class="col-3 box">
+                                <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#iniciar-sesion">Iniciar sesión</button>
+                            </div> 
+                            <div class="col-3 box">
+                                <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#registrarse">Registrarse</button>
+                            </div>
+
+                            <!-- INICAR SESION -->
+                            <div class="modal fade" id="iniciar-sesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <h:form class="modal-dialog box" role="document" onsubmit="return ingresar();" a:method="get">  
+
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-info">
+                                            <h5 class="modal-title">Iniciar Sesión</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h:form>
+                                                <div class="form-group">
+
+                                                    <h:outputLabel for="tipo" value="Tipo de Usuario:"></h:outputLabel>
+                                                    <select class="form-control" id="tipo">
+                                                        <option>Administrador</option>
+                                                        <option>Cliente</option>
+                                                        <option>Vendedor</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                    <h:outputLabel for="cedula" value="Documento:"></h:outputLabel>
+                                                    <h:inputText id="cedula" class="form-control" a:placeholder="Ingrese su numero de cedula" a:pattern="[0-9]{8}"></h:inputText>
+
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                    <h:outputLabel for="contra" value="Contraseña:"></h:outputLabel>
+                                                    <h:inputText id="contra" class="form-control" a:type="password" a:placeholder="Ingrese su contraseña" a:pattern="[A-Za-z0-9]{5,20}" title="Introduzca su contraseña de minimo 5 caracteres y maximo 20 caracteres"></h:inputText>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h:commandButton type="submit" class="form-control" value="Ingresar"></h:commandButton>
+                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#olvido-contrasena">Olvido contraseña</button>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+
+
+
+                            <!-- OLVIDO CONTRASEÑA -->
+                            <div class="modal fade" id="olvido-contrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                <h:form class="modal-dialog box" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-info">
+                                            <h5 class="modal-title">Olvido contraseña</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h:form>
+
+                                                <div class="form-group">
+                                                    <label>Documento</label>
+                                                    <h:outputLabel for="identificacion" value="Documento:"></h:outputLabel>
+                                                    <h:inputText a:type="tel" class="form-control" id="identificacion" a:placeholder="Numero de cedula" a:pattern="[0-9]{8}" title="Introduzca su numero de cedula maximo 8 dijitos" required=""></h:inputText>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <h:outputLabel for="contra1" value="Nueva Contraseña::"></h:outputLabel>
+
+                                                    <h:inputText a:type="password" class="form-control" id="contra1" a:placeholder="Contraseña nueva" a:pattern="[A-Za-z0-9]{5,20}" required=""></h:inputText>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <h:outputLabel for="contra2" value="Confirmar Contraseña:"></h:outputLabel>
+                                                    <h:inputText a:type="password" class="form-control" id="contra2" a:placeholder="Confirmacion" a:pattern="[A-Za-z0-9]{5,20}" required=""></h:inputText>
+                                                </div>
+                                            </h:form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <h:commandButton type="submit" class="form-control col-6" value="Ingresar"></h:commandButton>
+                                            <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+
+                            <!-- REGISTRASE -->
+                            <div class="modal fade" id="registrarse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <h:form class="modal-dialog box" role="document" onsubmit="return registrarse();" a:method="post">
+
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-info">
+                                            <h5 class="modal-title">Registrarse</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+
+                                                    <h:outputLabel for="nombre" value="Nombre:"></h:outputLabel>
+                                                    <h:inputText a:type="text" class="form-control" id="nombre"  a:placeholder="Nombre" a:minlength="4" a:pattern="[A-Z,a-z]+"></h:inputText>
+                                                </div>
+                                                <div class="form-group col-md-6">
+
+                                                    <h:outputLabel for="apellido" value="Apellido:"></h:outputLabel>
+
+                                                    <h:inputText a:type="text" class="form-control" id="apellido" a:placeholder="Apellido" a:minlength="4" a:pattern="[A-Z,a-z]+"></h:inputText>
+                                                </div>
+                                                <div class="form-group col-md-6">
+
+                                                    <h:outputLabel for="documento" value="Documento:"></h:outputLabel>
+                                                    <h:inputText a:type="tel" class="form-control" id="documento" a:pattern="[0-9]{8}" a:placeholder="Numero de cedula"></h:inputText>
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+
+                                                    <h:outputLabel for="direccion" value="Direccion de Residencia:"></h:outputLabel>
+                                                    <h:inputText a:type="text" class="form-control" id="direccion" a:minlength="20" a:placeholder="Direccion completa" title="INTRODUZCA MINIMO 20 CARACTERES"></h:inputText>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+
+                                                    <h:outputLabel for="telefono" value="Telefono:"></h:outputLabel>
+                                                    <h:inputText a:type="tel" class="form-control" id="telefono" a:minlength="7" a:placeholder="Numero de telefono" title="INTRODUZCA MINIMO 8 DIGITOS Y MAXIMO 10"></h:inputText>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
+
+                                                    <h:outputLabel for="coreo" value="Correo Electronico:"></h:outputLabel>
+                                                    <h:inputText a:type="email" class="form-control" id="coreo" a:placeholder="correo@gmail.com"  a:pattern="^[\w._%-]+@[\w.-]+\.[a-zA-Z]{2,4}"></h:inputText>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label>Contraseña</label>
+                                                    <h:outputLabel for="contrasena" value="Contraseña:"></h:outputLabel>
+                                                    <h:inputText a:type="password" class="form-control" id="contrasena" a:placeholder="Contraseña" a:pattern="[A-Za-z0-9]{5,20}" title="INTRODUZCA MINIMO 5 CARACTERES Y COMO MAXIMO 20 CARACTERES"></h:inputText>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+
+                                                    <h:outputLabel for="fecha" value="Fecha de Nacimiento:"></h:outputLabel>
+
+                                                    <h:inputText a:type="date" class="form-control" id="fecha" a:placeholder="Dia/mes/año"></h:inputText>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label>Localidad</label>
+                                                    <h:outputLabel for="localidad" value="Localidad:"></h:outputLabel>
+                                                    <select id="localidad" class="form-control">
+                                                        <option>Usaquen</option>
+                                                        <option>Chapinero</option>
+                                                        <option>Santa Fe</option>
+                                                        <option>San Cristobal</option>
+                                                        <option>Usme</option>
+                                                        <option>Tunjuelito</option>
+                                                        <option>Bosa</option>
+                                                        <option>Kennedy</option>
+                                                        <option>Fontibon</option>
+                                                        <option>Engativa</option>
+                                                        <option>Suba</option>
+                                                        <option>Barrios Unidos</option>
+                                                        <option>Teusaquillo</option>
+                                                        <option>Los martires</option>
+                                                        <option>Antonio Nariño</option>
+                                                        <option>Puente Aranda</option>
+                                                        <option>La candelaria</option>
+                                                        <option>Rafael Uribe Uribe</option>
+                                                        <option>Ciudad Bolivar</option>
+                                                    </select>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer form-group col-md-12">
+                                            <h:commandButton type="submit" class="form-control col-6" value="Registrarse"></h:commandButton>
+                                            <button type="button" class="btn btn-info col-6" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Main layout-->
+        <main>
+            <!--Section: about-->
+            <section id="about" class="py-5">
+                <!-- Container -->
+                <div class="container">
+                    <!-- Section heading -->
+                    <h2 class="h1-responsive font-weight-bold text-center mb-5">Destacados del mes</h2>
+                    <!-- Descripcción -->
+                    <p class="lead grey-text text-center w-responsive mx-auto mb-5"><h1>FAVORITOS DEL MES</h1>
+                        En take road bikes vas a econtrar los productos que mas te van a gustar, por eso, en esta semana te mostraremos los mas pedidos por nuestros clientes. Gracias a ellos estaran en un 50% de descuento.</p>
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-lg-12 text-center text-lg-left">
+                            <img src="resources/images/trb1.jpg" alt=""/>
+                            <img src="resources/images/trb2.jpg" alt=""/>
+                            <img src="resources/images/trb3.png" alt=""/>
+                            <img src="resources/images/trb4.jpg" alt=""/>
+                            <img src="resources/images/trb.jpg" alt=""/>
+                            <img src="resources/images/trb6.png" alt=""/>
+                        </div>
+                        <div class="col-xl-10 col-md-11 col-10">
+                            <h5 class="font-weight-bold mb-3">OFERTAS</h5>
+                            <p class="grey-text">Si compras algunos de estos productos podras participar en nuestras ofertas que realizamos en el mes, puedes ganarte descuentos o sorpresas que ofrece Take Road Bikes.</p>
+                        </div>
+                    </div>
+                    <!-- Grid row -->
+                    <div class="row mb-3">
+                        <!-- Grid column -->
+                        <div class="col-xl-10 col-md-11 col-10">
+                            <h5 class="font-weight-bold mb-3">CUPONES</h5>
+                            <p class="grey-text">Por la compra de los prosuctos podras participar para ganarte uno de los muchos cupones que vamos a estar regalando, con ellos podras obtener productos de la empresa gratis.</p>
+                        </div>
+                    </div>
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-1">
+                            <i class="fa fa-mail-forward fa-lg purple-text"></i>
+                        </div>
+                    </div>
+                    <!-- Container-->
+                </div>
+            </section>
+            <!--Section: projects-->
+            <section id="projects" class="text-center py-5" style="background-color: #eee;">
+                <!-- Container -->
+                <div class="container">
+                    <!-- Section heading -->
+                    <h2 class="h1-responsive font-weight-bold mb-5">Galeria</h2>
+                    <!-- Descripción -->
+                    <p class="grey-text w-responsive mx-auto mb-5">Aquí conoceras un poco mas de nosotros con la galeria de imagenes que ofrecemos para ti, encontraras algunas entregas por nuestro vendedor y el manejo que tenemos en la empresa como tal, danos la oportunidad y conocenos mas a fondo.</p>
+                    <!-- Grid row -->
+                    <div class="row text-center">
+                        <!-- Grid column -->
+                        <div class="col-lg-4 col-md-6 mb-lg-0 mb-4">
+                            <!--Featured image-->
+                            <div class="view overlay rounded z-depth-1">
+                                <img src="resources/images/galeria.jpg" alt=""/>
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Excerpt-->
+                            <div class="card-body pb-0">
+                                <h4 class="font-weight-bold my-3">ENTREGAS</h4>
+                                <p class="grey-text">Si no conoces como son las entregas completamente, conociendo nuestra propia ubicación.
+                                </p>
+                                <a href="https://www.facebook.com/pg/takeroadbikes/about/?ref=page_internal" class="btn btn- btn-sm"><i class="fa fa-clone left"></i> Consulta Aquí </a>    
+                            </div>
+                        </div>
+                        <!--Grid colum-->
+                        <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+                            <!--Featured image-->
+                            <div class="view overlay rounded z-depth-1">
+                                <img src="resources/images/galeria5.png" alt=""/>
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Excerpt-->
+                            <div class="card-body pb-0">
+                                <h4 class="font-weight-bold my-3">TAKE ROAD BIKES</h4>
+                                <p class="grey-text">Si deseas averiguar mas de esta empresa podras dar clic en el boton para información mas detallada.
+                                </p>
+                                <a href="https://www.facebook.com/takeroadbikes/" class="btn btn- btn-sm"><i class="fa fa-clone left"></i> Consulta Aquí </a>
+                            </div>
+                        </div>
+                        <!--Grid colum-->
+                        <div class="col-lg-4 col-md-6">
+                            <!--Featured image-->
+                            <div class="view overlay rounded z-depth-1">
+                                <img src="resources/images/galeria6.png" alt=""/>
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Excerpt-->
+                            <div class="card-body pb-0">
+                                <h4 class="font-weight-bold my-3">ACERCA DE</h4>
+                                <p class="grey-text">Si tienes alguna inquietud, puedes enviarnos un mensaje mas directo dando clic en el siguiente boton.
+                                </p>
+                                <a href="https://www.messenger.com/t/takeroadbikes" class="btn btn- btn-sm"><i class="fa fa-clone left"></i> Consulta Aquí</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Section: gallery-->
+            <section id="gallery" class="text-center py-5">
+                <!-- Container -->
+                <div class="container">
+                    <!-- Conocenos -->
+                    <h2 class="h1-responsive font-weight-bold mb-5">Conoce a Take Road Bikes</h2>
+                    <!-- Descripción -->
+                    <p class="grey-text w-responsive mx-auto mb-5">Nuestra empresa nace gracias a la pasión que compartimos por la bicicleta y el deporte que la caracteriza, el ciclismo. Este increíble artefacto que te llevará a donde tu quieras es nuestro mayor objetivo día a día, por eso al comprar uno de nuestros productos, también adquieres nuestra energía, entusiasmo y amor por la aventura.
+                        Sostenemos los ideales de una buena entrega para nuestros clientes, sin costo alguno para que puedan interactuar con la empresa como tal, tambien demostramos algunas ofertas que le interesaran a nuestros clientes para que interactuen con nuestros productos.</p>
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid colum-->
+                        <div class="col-md-12">
+                            <!--lightbox-ui-->
+                            <div id="mdb-lightbox-ui"></div>
+                            <!--lightbox-->
+                            <div class="mdb-lightbox">
+                                <!--Figure-->
+                                <figure class="col-md-12">
+                                    <a href="img/conoce.jpg"
+                                       data-size="1600x1067">
+                                        <img src="resources/images/conoce.jpg" alt=""/>
+                                    </a>
+                                </figure>
+                                <!--Figure-->
+                                <figure class="col-md-12">
+                                    <a href="img/logo.png"
+                                       data-size="1600x1067">
+                                        <img src="resources/images/logo.png" alt=""/>
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                <!--Sección galeria-->
+            </section>
+            <!--Sección testimonials-->
+            <section id="testimonials" class="text-center py-5" style="background-color: #eee;">
+                <!-- Container -->
+                <div class="container">
+                    <!-- Section heading -->
+                    <h2 class="h1-responsive font-weight-bold mb-5">Fundador</h2>
+                    <!--Testimonial-->
+                    <div class="testimonial">
+                        <!--Avatar-->
+                        <div class="avatar mx-auto mb-4">
+                            <img src="resources/images/logo.png" alt=""/>
+                        </div>
+                        <p>
+                            <i class="fa fa-quote-left"></i> La manera de empezar esta empresa fue en el momento de pensar como el cliente, que es lo que busca el ser humano actualmente, el servicio al cliente va hacer nuestro fuerte, nuestro objetivo, las ganas de inovar a través de los años es lo que mas esta llamando la atención, por eso creamos la manera de entrega de nuestros productos mas deportiva, que el cliente no solo piense en su servicio, sino también en lo importante que es conocer las carreteras de nuestras vias para ciclistas.
+                        </p>
+                        <h4 class="font-weight-bold">Andres Felipe Vargas Burgos</h4>
+                        <h6 class="font-weight-bold my-3">Fundador de la empresa de productos ciclisticos, Take Road Bikes</h6>
+                        <!--Review-->
+                        <i class="fa fa-star amber-text"> </i>
+                        <i class="fa fa-star amber-text"> </i>
+                        <i class="fa fa-star amber-text"> </i>
+                        <i class="fa fa-star amber-text"> </i>
+                        <i class="fa fa-star-half-full amber-text"> </i>
+                    </div>
+                </div>
+            </section>
+            <!--Sección Productos-->
+            <section id="articles" class="text-center py-5">
+                <!-- Container -->
+                <div class="container">
+                    <!-- Section heading -->
+                    <h2 class="h1-responsive font-weight-bold mb-5">Productos</h2>
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+                                <!-- Card image -->
+                                <div class="view view-cascade">
+                                    <img src="resources/images/pro.jpg" alt=""/>
+                                    <a>
+                                        <div class="mask img-gradient"></div>
+                                    </a>
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+                                    <!-- Label -->
+                                    <h5 class="pink-text pb-2 pt-1"><i class="fa fa-cutlery"></i>Luces Led</h5>
+                                    <!-- Titulo -->
+                                    <h4 class="font-weight-bold card-title">DESCRIPCIÓN</h4>
+
+                                    <!-- DESCRIPCION -->
+                                    <p class="card-text"> Luces led para tu bicicleta, dependen de dos bombillos blancos con diferentes movimientos, elastico para un buen uso en tu bicicleta. sostiene de dos colores, rojo y azul, aprueba de agua y pila recargable.</p>
+
+                                    <!-- BOTON -->
+                                    <div class="box">
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#prod1">Comprar</button>
+                                    </div>
+                                    <div class="modal fade" id="prod1" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <h:form class="modal-dialog box" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                    <h5 class="modal-title">Generar compra</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h:form>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="producto" value="Nombre Producto:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="producto" value="Luces led"></h:inputText>
+
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="categoria" value="Categoria:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="categoria" value="Luces"></h:inputText>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Cantidad</label>
+                                                            <h:outputLabel for="canti" value="Cantidad"></h:outputLabel>
+                                                            <h:inputText a:type="number" class="form-control" id="canti" a:placeholder="Cantidad que desea comprar"></h:inputText>
+                                                        </div>
+
+                                                    </h:form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+                                                    <button type="button" class="btn btn-info" onclick="comprar();">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+                                <!-- Card image -->
+                                <div class="view view-cascade">
+                                    <img src="resources/images/pro2.jpg" alt=""/>
+                                    <a>
+                                        <div class="mask img-gradient"></div>
+                                    </a>
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+                                    <!-- Label -->
+                                    <h5 class="pink-text pb-2 pt-1"><i class="fa fa-cutlery"></i> Audi Cable</h5>
+                                    <!-- Titulo -->
+                                    <h4 class="font-weight-bold card-title">DESCRIPCIÓN</h4>
+                                    <!-- Texto -->
+                                    <p class="card-text">Sostiene un cable para que lo conectes a tu celular y escuches tu reproductor musical que mas te guste mientras peladeas por la ciudad, bosques y demás, gran capacidad y buena calidad.</p>
+
+
+                                    <!-- BOTON -->
+                                    <div class="box">
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#prod2">Comprar</button>
+                                    </div>
+                                    <div class="modal fade" id="prod2" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <h:form class="modal-dialog box" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                    <h5 class="modal-title">Generar compra</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h:form>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="producto1" value="Nombre Producto:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="producto1" value="Audi cable"></h:inputText>
+
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="categoria1" value="Categoria:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="categoria1" value="Cables"></h:inputText>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Cantidad</label>
+                                                            <h:outputLabel for="canti1" value="Cantidad"></h:outputLabel>
+                                                            <h:inputText a:type="number" class="form-control" id="canti1" a:placeholder="Cantidad que desea comprar"></h:inputText>
+                                                        </div>
+
+                                                    </h:form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+                                                    <button type="button" class="btn btn-info" onclick="comprar();">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid colum-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+                                <!-- Card image -->
+                                <div class="view view-cascade">
+                                    <img src="resources/images/pro3.jpg" alt=""/>
+                                    <a>
+                                        <div class="mask img-gradient"></div>
+                                    </a>
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+                                    <!-- Label -->
+                                    <h5 class="pink-text pb-2 pt-1"><i class="fa fa-cutlery"></i> Llanta</h5>
+                                    <!-- Titulo -->
+                                    <h4 class="font-weight-bold card-title">DESCRIPCIÓN</h4>
+                                    <!-- Texto -->
+                                    <p class="card-text">LLanta delgada de gama gruesa, delantera y precisa para sostener una carretera plana, resistente a cualquier daño en los paseos que desee realizar en su medio de transporte, mayor capacidad para sostener una velocidad precisa.</p>
+
+                                    <!-- BOTON -->
+                                    <div class="box">
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#prod3">Comprar</button>
+                                    </div>
+                                    <div class="modal fade" id="prod3" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <h:form class="modal-dialog box" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                    <h5 class="modal-title">Generar compra</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h:form>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="producto2" value="Nombre Producto:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="producto2" value="Llanta delgada"></h:inputText>
+
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="categoria2" value="Categoria:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="categoria2" value="Llantas"></h:inputText>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Cantidad</label>
+                                                            <h:outputLabel for="canti2" value="Cantidad"></h:outputLabel>
+                                                            <h:inputText a:type="number" class="form-control" id="canti1" a:placeholder="Cantidad que desea comprar"></h:inputText>
+                                                        </div>
+
+                                                    </h:form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+                                                    <button type="button" class="btn btn-info" onclick="comprar();">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+                                <!-- Card image -->
+                                <div class="view view-cascade">
+                                    <img src="resources/images/pro4.jpg" alt=""/>
+                                    <a>
+                                        <div class="mask img-gradient"></div>
+                                    </a>
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+                                    <!-- Label -->
+                                    <h5 class="pink-text pb-2 pt-1"><i class="fa fa-cutlery"></i> Manzana</h5>
+                                    <!-- Titulo -->
+                                    <h4 class="font-weight-bold card-title">DESCRIPCIÓN</h4>
+                                    <!-- Texto -->
+                                    <p class="card-text">Manzana fuerte resistencia para tu biclicleta, ultimo modelo y color exclusivo, trae sus repuestos en el caso de realizarle un cambio breve.</p>
+
+                                    <!-- BOTON -->
+                                    <div class="box">
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#prod4">Comprar</button>
+                                    </div>
+                                    <div class="modal fade" id="prod4" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <h:form class="modal-dialog box" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                    <h5 class="modal-title">Generar compra</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h:form>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="producto3" value="Nombre Producto:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="producto3" value="Manzana"></h:inputText>
+
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="categoria3" value="Categoria:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="categoria3" value="Manzanas"></h:inputText>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Cantidad</label>
+                                                            <h:outputLabel for="canti3" value="Cantidad"></h:outputLabel>
+                                                            <h:inputText a:type="number" class="form-control" id="canti3" a:placeholder="Cantidad que desea comprar"></h:inputText>
+                                                        </div>
+
+                                                    </h:form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+                                                    <button type="button" class="btn btn-info" onclick="comprar();">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+                                <!-- Card image -->
+                                <div class="view view-cascade">
+                                    <img src="resources/images/pro6.jpg" alt=""/>
+                                    <a>
+                                        <div class="mask img-gradient"></div>
+                                    </a>
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+                                    <!-- Label -->
+                                    <h5 class="pink-text pb-2 pt-1"><i class="fa fa-cutlery"></i> Sillin</h5>
+                                    <!-- Titulo -->
+                                    <h4 class="font-weight-bold card-title">DESCRIPCIÓN</h4>
+                                    <!-- Texto -->
+                                    <p class="card-text">sillin de mejor manejo, un poco mas largo llevando una convinación de colores como lo es el negro y el rojo, en el centro sostiene un agujero para mayor comodidad.</p>
+
+                                    <!-- BOTON -->
+                                    <div class="box">
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#prod5">Comprar</button>
+                                    </div>
+                                    <div class="modal fade" id="prod5" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <h:form class="modal-dialog box" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                    <h5 class="modal-title">Generar compra</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h:form>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="producto4" value="Nombre Producto:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="producto4" value="Llanta"></h:inputText>
+
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="categoria4" value="Categoria:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="categoria4" value="Llantas"></h:inputText>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Cantidad</label>
+                                                            <h:outputLabel for="canti4" value="Cantidad"></h:outputLabel>
+                                                            <h:inputText a:type="number" class="form-control" id="canti4" a:placeholder="Cantidad que desea comprar"></h:inputText>
+                                                        </div>
+
+                                                    </h:form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+                                                    <button type="button" class="btn btn-info" onclick="comprar();">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <!-- Card Narrower -->
+                            <div class="card card-cascade narrower">
+                                <!-- Card image -->
+                                <div class="view view-cascade">
+                                    <img src="resources/images/pro7.jpg" alt=""/>
+                                    <a>
+                                        <div class="mask img-gradient"></div>
+                                    </a>
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade">
+                                    <!-- Label -->
+                                    <h5 class="pink-text pb-2 pt-1"><i class="fa fa-cutlery"></i> Marco</h5>
+                                    <!-- Titulo -->
+                                    <h4 class="font-weight-bold card-title">DESCRIPCIÓN</h4>
+                                    <!-- Texto -->
+                                    <p class="card-text">Marco metalizado de color plata, súper resistente a todo tipo de clima y situaciones, sostiene una estructura gruesa, teniendo una mejor calidad para el uso del ciclista.</p>
+
+                                    <!-- BOTON -->
+                                    <div class="box">
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#prod6">Comprar</button>
+                                    </div>
+                                    <div class="modal fade" id="prod6" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <h:form class="modal-dialog box" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                    <h5 class="modal-title">Generar compra</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h:form>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="producto5" value="Nombre Producto:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="producto5" value="Marco"></h:inputText>
+
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <h:outputLabel for="categoria5" value="Categoria:"></h:outputLabel>
+                                                            <h:inputText a:type="text" class="form-control" id="categoria5" value="Marcos"></h:inputText>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Cantidad</label>
+                                                            <h:outputLabel for="canti5" value="Cantidad"></h:outputLabel>
+                                                            <h:inputText a:type="number" class="form-control" id="canti5" a:placeholder="Cantidad que desea comprar"></h:inputText>
+                                                        </div>
+
+                                                    </h:form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+                                                    <button type="button" class="btn btn-info" onclick="comprar();">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </section>
+            <!--Sección contactenos-->
+            <section id="contact" class="py-5" style="background-color: #eee;">
+                <div class="container">
+                    <!-- Section heading -->
+                    <h2 class="h1-responsive font-weight-bold text-center mb-5">Contactate con nosotros</h2>
+                    <!-- Descripción -->
+                    <p class="text-center w-responsive mx-auto mb-5">EMPIEZA A VIVIR UNA AVENTURA Y A RODAR CON TAKE ROAD BIKES.visita nuestra tienda y encuentra todo lo necesario para desafiar nuevos límites y llegar tan lejos como te lo propongas.</p>
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-9 mb-md-0 mb-5">
+                            <!--form-->
+                            <h:form>
+                                <!-- Grid row -->
+                                <div class="row">
+                                    <!-- Grid column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="contact-name" class="form-control"/>
+                                            <label for="contact-name" class="">Tu Nombre</label>
+
+                                        </div>
+                                    </div>
+                                    <!-- Grid column -->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="contact-email" class="form-control"/>
+                                            <label for="contact-email" class="">Tu Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
+                                <div class="row">
+                                    <!-- Grid column -->
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="contact-Subject" class="form-control"/>
+                                            <label for="contact-Subject" class="">Calificanos con tu opinión</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
+                                <div class="row">
+                                    <!-- Grid column -->
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <h:inputTextarea a:type="text" id="contact-message" class="form-control md-textarea" rows="3"></h:inputTextarea>
+                                            <h:outputLabel for="contact-message" value="Envianos tu mensaje:"></h:outputLabel>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-md-left">
+                                    <h:commandButton type="submit" class="btn btn-blue btn-md" value="Enviar"></h:commandButton>
+                                </div>
+                            </h:form>      
+                        </div>
+                        <!-- Grid column -->
+                        <div class="col-md-3 text-center">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#mapa" data-toggle="modal"><i class="fa fa-map-marker fa-2x blue-text" title="Buscanos en el mapa">
+                                        </i> </a>
+                                    <p>Bogotá, Cundinamarca Cl. 62 Sur #29-2</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone fa-2x mt-4 blue-text"></i>
+                                    <p> (+571) 739 5971 - 744 1131 - 746 9082 · Ext. 4263</p>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope fa-2x mt-4 blue-text"></i>
+                                    <p class="mb-0">AndresFelipeVargasBurgos@gmail.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Main layout-->
+        </main>
+        <!-- Modal Ubicación -->
+        <div class="modal" tabindex="-1" role="dialog" id="mapa">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ubicación</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1988.567109251996!2d-74.14967052279063!3d4.569893230856547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9f156b0ffa7f%3A0x6968fc74e5492ee3!2sCl.+62+Sur+%2329-2%2C+Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1560454787021!5m2!1ses-419!2sco" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer font-small pt-4">
+            <!-- Footer Elements -->
+            <div class="container">
+                <!-- Boton redes sociales -->
+                <ul class="list-unstyled list-inline text-center">
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-fb mx-1">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-tw mx-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-gplus mx-1">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-li mx-1">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-dribbble mx-1">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Take Road Bikes</a>
+            </div>
+        </footer>
+        <script src="resources/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="resources/js/popper.js" type="text/javascript"></script>
+        <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="resources/js/all.js" type="text/javascript"></script>
+        <script src="resources/js/sweetalert.js" type="text/javascript"></script>
+        <script src="resources/js/validar-ingreso.js" type="text/javascript"></script>
+        <script src="resources/js/validar-registro.js" type="text/javascript"></script>
+        <script src="resources/js/validar-olvido-contrasena.js" type="text/javascript"></script>
+    </h:body>
+</html>
+
